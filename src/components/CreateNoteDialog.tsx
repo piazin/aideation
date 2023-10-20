@@ -12,13 +12,23 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Plus } from 'lucide-react';
+import { Loader2, Plus } from 'lucide-react';
 import { useMutation } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
 
 type Props = {};
 
 const CreateNoteDialog = (props: Props) => {
+  const router = useRouter();
   const [input, setInput] = React.useState('');
+  const uploadToFirebase = useMutation({
+    mutationFn: async (noteId: string) => {
+      const response = await axios.post('/api/uploadToFirebase', {
+        noteId,
+      });
+      return response.data;
+    },
+  });
 
   const createNotebook = useMutation({
     mutationFn: async () => {
@@ -37,11 +47,14 @@ const CreateNoteDialog = (props: Props) => {
     }
 
     createNotebook.mutate(undefined, {
-      onSuccess: () => {
-        console.log('created');
+      onSuccess: ({ note_id }) => {
+        console.log({ note_id });
+        uploadToFirebase.mutate(note_id);
+        router.push(`/notebook/${note_id}`);
       },
       onError: (err) => {
         console.error(err);
+        window.alert('Failed to create new notebook');
       },
     });
   };
@@ -70,7 +83,8 @@ const CreateNoteDialog = (props: Props) => {
                 Cancel
               </Button>
             </DialogClose>
-            <Button type="submit" className="bg-green-600">
+            <Button type="submit" className="bg-green-600" disabled={createNotebook.isLoading}>
+              {createNotebook.isLoading && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
               Create
             </Button>
           </div>
