@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from 'openai-edge';
 
 const config = new Configuration({
-  apiKey: process.env.OPENIA_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(config);
@@ -24,7 +24,9 @@ export async function generateImagePrompt(name: string) {
     });
 
     const data = await response.json();
+
     const imageDescription = data.choices[0].message.content;
+
     return imageDescription as string;
   } catch (error) {
     console.info('openia.ts', error);
