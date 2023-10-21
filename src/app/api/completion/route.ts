@@ -15,18 +15,18 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'system',
-        content: `You are a helpful AI embedded in a notion text editor app that is used to autocomplete sentences
-          The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.
-      AI is a well-behaved and well-mannered individual.
-      AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user.`,
+        content: `Você é uma IA útil incorporada em um aplicativo de edição de texto usado para preencher frases automaticamente
+        As características da IA incluem conhecimento especializado, utilidade, inteligência e articulação.
+        AI é um indivíduo bem comportado e bem-educado.
+        AI é sempre amigável, gentil e inspirador, e está ansioso para fornecer respostas vívidas e atenciosas ao usuário.`,
       },
       {
         role: 'user',
         content: `
-        I am writing a piece of text in a notion text editor app.
-        Help me complete my train of thought here: ##${prompt}##
-        keep the tone of the text consistent with the rest of the text.
-        keep the response short and sweet.
+        Estou escrevendo um trecho de texto em um aplicativo de edição de texto nocional.
+        Ajude-me a completar minha linha de pensamento aqui: ##${prompt}##
+        mantenha o tom do texto consistente com o resto do texto.
+        mantenha a resposta curta e amável.
         `,
       },
     ],

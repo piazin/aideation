@@ -1,1 +1,1 @@
-AI note taking assistant.
+O projeto 'Aideation', um inovador editor de notas, oferece uma experiência única ao utilizar inteligência artificial para complementar e aprimorar seus textos. Com o poder da IA, sua criatividade e produtividade serão levadas a um novo nível.

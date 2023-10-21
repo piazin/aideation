@@ -14,11 +14,11 @@ export async function generateImagePrompt(name: string) {
         {
           role: 'system',
           content:
-            'You are an creative and helpful AI assistance capable of generating interesting thumbnail descriptions for my notes. Your output will be fed into the DALLE API to generate a thumbnail. The description should be minimalistic and flat styled',
+            'Você é um assistente de IA criativo e útil, capaz de gerar descrições interessantes em miniaturas para minhas anotações. Sua saída será alimentada na API DALLE para gerar uma miniatura. A descrição deve ser minimalista e de estilo simples',
         },
         {
           role: 'user',
-          content: `Please generate a thumbnail description for my notebook titles ${name}`,
+          content: `Por favor, gere uma descrição em miniatura para os títulos dos meus cadernos ${name}`,
         },
       ],
     });

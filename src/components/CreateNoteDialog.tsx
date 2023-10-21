@@ -64,28 +64,28 @@ const CreateNoteDialog = (props: Props) => {
       <DialogTrigger>
         <div className="border-dashed border-2 flex border-green-600 h-full rounded-lg items-center justify-center sm:flex-col hover:shadow-xl transition hover:-translate-y-1 flex-row p-4">
           <Plus className="w-6 h-6 text-green-600" strokeWidth={3} />
-          <h2 className="font-semibold text-green-600 sm:mt-2">New Note Book</h2>
+          <h2 className="font-semibold text-green-600 sm:mt-2">Novo caderno</h2>
         </div>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create New Note Book</DialogTitle>
+          <DialogTitle>Criar um novo caderno</DialogTitle>
           <DialogDescription>
-            You can create a new note by clicking the button below.
+            Você pode criar uma nova nota clicando no botão abaixo.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
-          <Input placeholder="Name..." value={input} onChange={(e) => setInput(e.target.value)} />
+          <Input placeholder="Nome..." value={input} onChange={(e) => setInput(e.target.value)} />
           <div className="h-4"></div>
           <div className="flex items-center gap-2">
             <DialogClose>
               <Button type="reset" variant="secondary">
-                Cancel
+                Cancelar
               </Button>
             </DialogClose>
             <Button type="submit" className="bg-green-600" disabled={createNotebook.isLoading}>
               {createNotebook.isLoading && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
-              Create
+              Criar
             </Button>
           </div>
         </form>

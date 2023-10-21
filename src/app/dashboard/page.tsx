@@ -26,11 +26,11 @@ const DashboardPage = async (props: Props) => {
               <Link href="/">
                 <Button className="bg-green-600" size="sm">
                   <ArrowLeft className="mr-1 w-4 h-4" />
-                  Back
+                  Voltar
                 </Button>
               </Link>
               <div className="w-4"></div>
-              <h1 className="text-3xl font-bold text-gray-900">My Notes</h1>
+              <h1 className="text-3xl font-bold text-gray-900">Minhas notas</h1>
               <div className="w-4"></div>
               <UserButton />
             </div>
@@ -43,7 +43,7 @@ const DashboardPage = async (props: Props) => {
           {/* list all notes */}
           {notes.length == 0 && (
             <div className="text-center">
-              <h2 className="text-xl text-gray-500">You have no notes</h2>
+              <h2 className="text-xl text-gray-500">Você não tem notas</h2>
             </div>
           )}
 

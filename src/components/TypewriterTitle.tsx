@@ -10,10 +10,10 @@ export const TypewriterTitle = () => {
       }}
       onInit={(typewriter) => {
         typewriter
-          .typeString('Supercharged Productivity.')
+          .typeString('Produtividade turbinada.')
           .pauseFor(1000)
           .deleteAll()
-          .typeString('AI-Powered Insights.')
+          .typeString('Insights baseados em IA.')
           .start();
       }}
     />

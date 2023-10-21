@@ -1,6 +1,7 @@
 import { Editor } from '@tiptap/react';
 import {
   BoldIcon,
+  Bot,
   Code,
   CodepenIcon,
   Heading1,
@@ -125,6 +126,12 @@ const TipTapMenuBar = ({ editor }: Props) => {
         disabled={!editor.can().chain().focus().redo().run()}
       >
         <Redo className="w-6 h-6" />
+      </button>
+      <button
+        onClick={() => editor.chain().focus().redo().run()}
+        disabled={!editor.can().chain().focus().redo().run()}
+      >
+        <Bot className="w-6 h-6" />
       </button>
     </div>
   );
